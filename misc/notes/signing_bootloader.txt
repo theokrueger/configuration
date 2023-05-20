@@ -1,0 +1,1 @@
+sbsign --key /etc/efikeys/db.key --cert /etc/efikeys/db.crt --output /etc/efikeys/grubx64.efi /boot/EFI/gen2/grubx64.efi
