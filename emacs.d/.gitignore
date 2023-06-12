@@ -1,0 +1,15 @@
+*~
+.#*
+#*#
+*.elc
+*.eln
+/auto-save-list
+/bookmarks
+/custom-vars.el
+/extern/backup
+/recentf
+/elpa/
+/saves/
+/url/
+/eln-cache/
+/games/
