@@ -1,0 +1,22 @@
+# /etc/skel/.bashrc
+
+# interactive test
+if [[ $- != *i* ]] ; then
+	# Shell is non-interactive.  Be done now!
+	return
+fi
+
+# custom here
+# prepend a space to make it not go into history
+export HISTIGNORE=' *'
+
+# coloured output
+alias lsa='ls -a --color=auto'
+# bad habit fixers
+alias sudo='doas'
+alias emacs='emacsclient -c'
+# kill commands
+alias pskill='awk "{print \$1}" | xargs kill -9'
+alias steamkill='ps -x | grep -ie "\(gamescope\|gamemoderun\|wine\|proton\|windows\)" | awk "{print \$1}" | xargs kill -9'
+# misc
+alias play="touch /tmp/xsetroot_game.play"
