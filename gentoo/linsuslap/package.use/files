@@ -1,0 +1,5 @@
+app-arch/p7zip rar
+app-arch/unzip natspec
+x11-libs/libfm exif udisks vala
+gnome-base/gvfs archive cdda fuse mtp nfs udisks zeroconf
+

@@ -1,0 +1,3 @@
+kde-apps/k3b dvd encode flac mad mp3 vcd vorbis ffmpeg taglib musepack sndfile sox
+media-video/transcode dvd
+kde-frameworks/kfilemeta taglib

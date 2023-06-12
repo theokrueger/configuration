@@ -1,0 +1,5 @@
+# emacs
+app-editors/emacs gui Xaw3d athena -cairo -gtk gif dynamic-loading jit source ssl threads gpm json harfbuzz inotify jpeg lcms png tiff xft xpm
+app-emacs/emacs-common gui
+sys-devel/gcc jit # for emacs jit
+# lsp mode

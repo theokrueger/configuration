@@ -1,0 +1,3 @@
+sys-boot/grub mount mapper device-mapper
+sys-fs/cryptsetup -openssl
+dev-libs/libpcre2 static-libs

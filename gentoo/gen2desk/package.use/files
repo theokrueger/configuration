@@ -1,0 +1,7 @@
+# archive
+app-arch/p7zip rar
+app-arch/unzip natspec
+# thunar
+x11-libs/libfm exif udisks vala
+gnome-base/gvfs archive fuse udisks
+xfce-base/tumbler epub jpeg odf pdf raw

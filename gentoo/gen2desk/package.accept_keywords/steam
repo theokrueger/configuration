@@ -1,0 +1,19 @@
+# steam itself
+games-util/steam-meta **
+games-util/steam-client-meta **
+games-util/game-device-udev-rules **
+games-util/steam-launcher **
+# tools for proton
+## gamescope
+gui-wm/gamescope **
+dev-libs/libliftoff **
+media-libs/libdisplay-info **
+media-libs/vkroots **
+## gamemode
+<games-util/gamemode-9999 **
+# mangohud
+<games-util/mangohud-9999 **
+# steam tools
+## sam
+games-util/samrewritten ~amd64
+

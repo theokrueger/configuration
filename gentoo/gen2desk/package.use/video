@@ -1,0 +1,5 @@
+# vlc
+media-video/vlc dvd encode ffmpeg flac kate libass matroska mpeg opus x264 x265
+# obs
+media-video/ffmpeg libdrm mp3 openal opengl openh264 x264 x265 webp svg chromium amr vaapi vorbis vpx cdio
+media-video/obs-studio lua truetype amf vlc python speex browser

@@ -1,0 +1,14 @@
+app-editors/emacs -motif athena Xaw3d -gtk gui source X dynamic-loading gif gmp gpm gsettings harfbuzz -imagemagick lcms dbus jpeg png xvg threads tiff xft zlib libxml2 json
+app-emacs/emacs-common gui
+app-office/libreoffice pdfimport
+app-office/libreoffice-l10n l10n_en l10n_en-GB
+media-libs/gd truetype fontconfig
+media-libs/libvpx postproc
+app-text/poppler cairo
+media-libs/gegl cairo
+dev-python/PyQt5 declarative
+media-gfx/gimp javascript lua postscript openexr python webp wmf xpm
+media-libs/mlt ffmpeg frei0r xml sdl
+media-video/ffmpeg sdl
+media-libs/libsdl2 opengl
+media-xlibs/opencv contribdnn

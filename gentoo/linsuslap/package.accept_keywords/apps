@@ -1,0 +1,7 @@
+x11-misc/pcmanfm::gentoo
+x11-libs/libfm::gentoo
+app-text/tldr::guru
+www-apps/element::gentoo
+app-misc/anki-bin::guru
+dev-python/stringcase::guru
+net-im/element-desktop-bin **

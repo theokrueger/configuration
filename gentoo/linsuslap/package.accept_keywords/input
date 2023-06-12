@@ -1,0 +1,4 @@
+dev-libs/libratbag::gentoo
+app-shells/ohmyzsh
+x11-drivers/OpenTabletDriver-bin
+dev-dotnet/dotnet-sdk-bin:6.0

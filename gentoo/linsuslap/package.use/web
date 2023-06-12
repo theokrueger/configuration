@@ -1,0 +1,11 @@
+media-libs/libvpx postproc
+dev-libs/libxml2 icu
+media-libs/harfbuzz icu
+net-libs/nodejs inspector
+www-client/firefox eme-free hwaccel -geckodriver -gmp-autoupdate openh264 -screencast -wifi
+mail-client/thunderbird eme-free hardened hwaccel
+app-text/xmlto text
+sys-libs/zlib minizip
+x11-base/xorg-server xvfb
+www-client/ungoogled-chromium -pgo
+dev-util/electron -pgo ungoogled

@@ -1,0 +1,4 @@
+# a
+app-i18n/mozc -emacs
+# character fonts
+media-fonts/fonts-meta cjk emoji ms

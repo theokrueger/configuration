@@ -1,0 +1,5 @@
+# browsers
+www-client/firefox eme-free hwaccel
+# ungoogled
+www-client/ungoogled-chromium gtk4 official hevc vaapi
+>=net-libs/nodejs-20.2.0 inspector

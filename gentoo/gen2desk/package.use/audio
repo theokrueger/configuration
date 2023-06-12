@@ -1,0 +1,6 @@
+# pipewire
+media-video/pipewire gstreamer pipewire-alsa sound-server flatpak extra
+media-sound/pulseaudio -alsa-plugin -daemon ofono-headset
+# mpd
+media-sound/mpd cdio cue ffmpeg flac lame
+media-sound/ncmpcpp clock outputs taglib visualizer
