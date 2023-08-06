@@ -1,3 +1,0 @@
-# printer works
-net-print/cups usb
-net-print/gutenprint gimp gtk

@@ -87,3 +87,12 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     doas mv /etc/X11/xorg.conf.d /etc/X11/xorg.conf.d.old
     doas cp -r ./x11/xorg.conf.d /etc/X11/xorg.conf.d
 fi
+
+# update fp
+read -p "fp.sh? " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    mv ~/.local/bin/fp ~/.local/bin/fp.old
+    cp ./misc/launchers/fp.sh ~/.local/bin/fp
+    chmod +x ~/.local/bin/fp
+fi

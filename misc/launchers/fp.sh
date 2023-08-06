@@ -76,17 +76,14 @@ usc() {
 APP="echo 'application not found: $@'"
 
 declare -A APPS=(
-    [freetube]='dbus-run-session flatpak run io.freetubeapp.FreeTube'
     [steam]='flatpak run com.valvesoftware.Steam'
     [jd]='dbus-run-session flatpak run org.jdownloader.JDownloader'
     [plutonium]='plutonium'
-    [fgo]='/home/me/Android/Sdk/emulator/emulator -avd FGO'
     [usc]='usc'
     [clonehero]='clonehero'
     [ch]='st -e fp clonehero'
     [obs]='obs-studio'
     [osu]='/mnt/sdc/games/pc/osu/osu.AppImage'
-    [tf2]='/mnt/sdg/games/steam/steamapps/common/Titanfall2/Viper-1.6.3.AppImage'
 )
 
 ! [[ -z ${APPS[$1]} ]] && echo "launching $1" && APP=${APPS[$1]}

@@ -44,13 +44,13 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 
-        /* class         instance  title  tagmask  isfloating  monitor */
-        {"nheko",        NULL,     NULL,  1 << 5,  0,          1},
-        {"Element",      NULL,     NULL,  1 << 5,  0,          1},
-        {"qBittorrent",  NULL,     NULL,  1 << 6,  0,          1},
-	{NULL,           "Steam",  NULL,  1 << 6,  0,          1},
-	{"thunderbird",  NULL,     NULL,  1 << 6,  0,          1},
-        {"ncmpcpp",      NULL,     NULL,  1 << 4,  0,          1},
+        /* class         instance  title    tagmask  isfloating  monitor */
+        {"nheko",        NULL,     NULL,    1 << 5,  0,          1},
+        {"Element",      NULL,     NULL,    1 << 5,  0,          1},
+        {"qBittorrent",  NULL,     NULL,    1 << 6,  0,          1},
+	{NULL,           NULL,     "Steam", 1 << 6,  0,          1},
+	{"thunderbird",  NULL,     NULL,    1 << 6,  0,          1},
+        {"ncmpcpp",      NULL,     NULL,    1 << 4,  0,          1},
 };
 
 /* layout(s) */
@@ -86,15 +86,14 @@ static const Layout layouts[] = {
 
 /* commands */
 // applications
-static const char *app_terminal[]     = {"st",                            NULL};
-static const char *app_webbrowser[]   = {"firefox",                       NULL};
-static const char *app_webbrowser2[]  = {"chromium",                      NULL};
-static const char *app_messenger[]    = {"nheko",                         NULL};
-static const char *app_filemanager[]  = {"pcmanfm",                       NULL};
-static const char *app_editor[]       = {"emacsclient", "--create-frame", NULL};
-static const char *app_emailclient[]  = {"thunderbird",                   NULL};
-static const char *app_gamelauncher[] = {"steam",                         NULL};
-static const char *app_mediaplayer[]  = {"st", "-e", "/home/me/backups/code/theokrueger/configuration/ncmpcpp/ncmpcpp.sh", NULL};
+static const char *app_terminal[]     = {"st",                                              NULL};
+static const char *app_webbrowser[]   = {"firefox",                                         NULL};
+static const char *app_webbrowser2[]  = {"chromium",                                        NULL};
+static const char *app_messenger[]    = {"flatpak", "run", "im.riot.Riot",                  NULL};
+static const char *app_filemanager[]  = {"pcmanfm",                                         NULL};
+static const char *app_editor[]       = {"emacsclient", "--create-frame",                   NULL};
+static const char *app_gamelauncher[] = {"flatpak", "run", "com.valvesoftware.Steam",       NULL};
+static const char *app_mediaplayer[]  = {"st", "-e", "/home/me/.config/ncmpcpp/ncmpcpp.sh", NULL};
 // media control
 static const char *media_next[]          = {"mpc", "next",         NULL};
 static const char *media_previous[]      = {"mpc", "prev",         NULL};
@@ -142,7 +141,6 @@ static Key keys[] = {
         {MODKEY | ControlMask, XK_f,      spawn, {.v = app_webbrowser2}},         // spawn other web browser
         {MODKEY | ShiftMask,   XK_g,      spawn, {.v = app_filemanager}},         // spawn file manager
         {MODKEY | ShiftMask,   XK_e,      spawn, {.v = app_editor}},              // spawn text editor
-        {MODKEY | ShiftMask,   XK_t,      spawn, {.v = app_emailclient}},         // spawn email client
         {MODKEY | ShiftMask,   XK_d,      spawn, {.v = app_messenger}},           // spawn messenger
         {MODKEY | ShiftMask,   XK_o,      spawn, {.v = app_dmenu_nm}},            // spawn networkmanager dmenu
         {MODKEY | ShiftMask,   XK_r,      spawn, {.v = app_gamelauncher}},        // spawn game launcher

@@ -16,7 +16,7 @@ alias lsa='ls -a --color=auto'
 alias sudo='doas'
 alias emacs='emacsclient -c'
 # kill commands
-alias pskill='awk "{print \$1}" | xargs kill -9'
+alias xakill='xargs kill -9'
 alias steamkill='ps -x | grep -ie "\(gamescope\|gamemoderun\|wine\|proton\|windows\)" | awk "{print \$1}" | xargs kill -9'
 # misc
 alias play="touch /tmp/xsetroot_game.play"

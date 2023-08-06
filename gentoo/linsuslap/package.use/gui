@@ -1,7 +1,0 @@
-dev-qt/qtcore icu
-kde-frameworks/kfilemetadata taglib
-dev-libs/xmlsec nss
-net-libs/gnutls pkcs11 tools
-net-dns/dnsmasq script
-net-misc/spice-gtk usbredir
-dev-libs/libpcre2 abi_x86_32

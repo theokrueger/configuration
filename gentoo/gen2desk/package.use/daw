@@ -1,8 +1,0 @@
-# ardour
->=sci-libs/fftw-3.3.10 threads
->=media-libs/suil-0.10.18-r1 gtk2
-# mixxx
-media-sound/mixxx aac hid lv2 mp3 mp4 opus wavpack
->=dev-qt/qtscript-5.15.9 scripttools
-# plugins
-media-plugins/calf lv2

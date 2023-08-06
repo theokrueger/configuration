@@ -1,8 +1,0 @@
-media-video/vlc a52 alsa archive aribsub bidi bluray chromaprint dav1d dts dvbpsi dbd encode faad fdk ffmpeg flac kate libass libcaca libtiger matroska mp3 mpeg musepack opus png projectm v4l xml zvbi ogg
-media-video/ffmpeg libdrm mp3 openal opengl openh264 x264 x265 webp xvg chromium amf vaapi libass
-media-video/obs-studio lua truetype n4l amf
-media-tv/v4l-utils opengl qt5 udev
-media-libs/mlt qt5
-media-libs/freetype harfbuzz
-media-libs/libprojectm qt5 pulseaudio
->=media-libs/libass-0.16.0 abi_x86_32

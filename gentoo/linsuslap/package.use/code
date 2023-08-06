@@ -1,6 +1,0 @@
-media-libs/opencv contribdnn contrib qt5 opencl opengl -gtk3
-dev-libs/boost context
-dev-lang/mono minimal
-app-arch/rpm python
-app-text/blogc git httpd make
-dev-lang/R png

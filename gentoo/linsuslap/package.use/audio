@@ -1,4 +1,0 @@
-media-video/pipewire gstreamer pipewire-alsa sound-server
-media-sound/pulseaudio -alsa-plugin -daemon
-media-plugins/gst-plugins-meta vorbis ogg aac cdda ffmpeg flac mp3 mpeg ogg opus taglib vaapi vorbis vpx x264 wavpack
-media-video/strawberry cdda gstreamer moodbar mtp pulseaudio -vlc
