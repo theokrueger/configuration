@@ -1,12 +1,20 @@
 #!/bin/bash
+
+steam-launch() {
+    if [[ $(ps -x | grep -i steam | wc -l) -gt 1 ]]; then
+        xdg-open steam://rungameid/$1
+    fi
+}
+
+batch-kill () {
+    ps -x | grep -i $1 | awk '{print $1}' | xargs kill
+}
+
 obs-studio() {
     APPID="1905180"
-
-    samrewritten -i $APPID &
-
+    steam-launch $APPID &
     obs --startreplaybuffer
-
-    ps -x | grep -i $APPID | awk {'print $1'} | xargs kill
+    batch-kill $APPID
 }
 
 plutonium() {
@@ -34,45 +42,46 @@ plutonium() {
             APPID="-1";;
     esac
 
-    WINEPREFIX=$MYPFXDIR DXVK_STATE_CACHE=1 DXVK_STATE_CACHE_PATH=$MYPFXDIR STAGING_SHARED_MEMORY=0 __GL_SHADER_DISK_CACHE=1 __GL_SHADER_DISK_CACHE_PATH=$MYPFXDIR __GL_SHADER_DISK_CACHE_SKIP_CLEANUP=true __GL_THREADED_OPTIMIZATIONS=1 $WINECOMMAND $MYPFXDIR/../plutonium.exe &
+    steam-launch -i $APPID &
 
-    samrewritten -i $APPID
+    st -e "WINEPREFIX=$MYPFXDIR DXVK_STATE_CACHE=1 DXVK_STATE_CACHE_PATH=$MYPFXDIR STAGING_SHARED_MEMORY=0 __GL_SHADER_DISK_CACHE=1 __GL_SHADER_DISK_CACHE_PATH=$MYPFXDIR __GL_SHADER_DISK_CACHE_SKIP_CLEANUP=true __GL_THREADED_OPTIMIZATIONS=1 $WINECOMMAND $MYPFXDIR/../plutonium.exe"
 
     ratbagctl $MOUSEDEV rate set 1000
 
-    #WINEPREFIX=$MYPFXDIR wine64 $MYPFXDIR/../plutonium.exe
+    batch-kill $APPID
+    batch-kill 'Call of Duty'
 
-    ps -x | grep -i $APPID | awk {'print $1'} | xargs kill
-    ps -x | grep -i 'Call of Duty' | awk {'print $1'} | xargs kill
-
-    xrandr --output HDMI-A-0 --auto
-    xrandr --output HDMI-A-0 --left-of DisplayPort-2
 }
 
 clonehero() {
     APPID=1224900
-
-    /mnt/sdg/games/clonehero/clonehero &
-
-    samrewritten -i $APPID
-
-    ps -x | grep -i $APPID | awk {'print $1'} | xargs kill
+    steam-launch $APPID &
+    st -e "/mnt/sdg/games/clonehero/clonehero"
+    batch-kill $APPID
 }
 
 usc() {
     APPID=980610
 
-    xrandr --output DisplayPort-2 --rotate right
+    OUTPUT="DisplayPort-2"
 
-    samrewritten -i $APPID &
+    xrandr --output $OUTPUT --rotate right
+
+    steam-launch $APPID &
 
     /mnt/sdg/games/sdvx/usc-game
 
-    xrandr --output DisplayPort-2 --rotate normal
+    xrandr --output $OUTPUT --rotate normal
 
-    ps -x | grep -i $APPID | awk {'print $1'} | xargs kill
+    batch-kill $APPID
 }
 
+osu() {
+    APPID=607260
+    steam-launch $APPID &
+    st -e "/mnt/sdc/games/pc/osu/osu.AppImage"
+    batch-kill $APPID
+}
 APP="echo 'application not found: $@'"
 
 declare -A APPS=(
@@ -80,10 +89,9 @@ declare -A APPS=(
     [jd]='dbus-run-session flatpak run org.jdownloader.JDownloader'
     [plutonium]='plutonium'
     [usc]='usc'
-    [clonehero]='clonehero'
-    [ch]='st -e fp clonehero'
+    [ch]='clonehero'
     [obs]='obs-studio'
-    [osu]='/mnt/sdc/games/pc/osu/osu.AppImage'
+    [osu]='osu'
 )
 
 ! [[ -z ${APPS[$1]} ]] && echo "launching $1" && APP=${APPS[$1]}

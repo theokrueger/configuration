@@ -86,14 +86,14 @@ static const Layout layouts[] = {
 
 /* commands */
 // applications
-static const char *app_terminal[]     = {"st",                                              NULL};
-static const char *app_webbrowser[]   = {"firefox",                                         NULL};
-static const char *app_webbrowser2[]  = {"chromium",                                        NULL};
-static const char *app_messenger[]    = {"flatpak", "run", "im.riot.Riot",                  NULL};
-static const char *app_filemanager[]  = {"pcmanfm",                                         NULL};
-static const char *app_editor[]       = {"emacsclient", "--create-frame",                   NULL};
-static const char *app_gamelauncher[] = {"flatpak", "run", "com.valvesoftware.Steam",       NULL};
-static const char *app_mediaplayer[]  = {"st", "-e", "/home/me/.config/ncmpcpp/ncmpcpp.sh", NULL};
+static const char *app_terminal[]     = {"st",                                                       NULL};
+static const char *app_webbrowser[]   = {"firefox",                                                  NULL};
+static const char *app_webbrowser2[]  = {"chromium",                                                 NULL};
+static const char *app_messenger[]    = {"flatpak", "run", "im.riot.Riot",                           NULL};
+static const char *app_filemanager[]  = {"pcmanfm",                                                  NULL};
+static const char *app_editor[]       = {"emacsclient", "--create-frame",                            NULL};
+static const char *app_gamelauncher[] = {"flatpak", "run", "com.valvesoftware.Steam", "-no-browser", NULL};
+static const char *app_mediaplayer[]  = {"st", "-e", "/home/me/.config/ncmpcpp/ncmpcpp.sh",          NULL};
 // media control
 static const char *media_next[]          = {"mpc", "next",         NULL};
 static const char *media_previous[]      = {"mpc", "prev",         NULL};
@@ -115,11 +115,6 @@ static const char *screenshot_crop[] = {"flameshot", "gui", NULL};
 // brightness
 static const char *brightness_up[]   = {"brightnessctl", "s", "5%+", NULL};
 static const char *brightness_down[] = {"brightnessctl", "s", "5%-", NULL};
-// fn keys
-static const char *audio_control_panel[] = {"pavucontrol", NULL};
-static const char *bluetooth_menu[] = {"st", "-e", "bluetoothctl", NULL};
-static const char *toggle_bluetooth[] = {"doas", "rfkill", "toggle", "bluetooth", NULL};
-static const char *connection_editor[] = {"st", "-e", "nmtui-connect", NULL};
 #endif
 
 // dmenu commands
@@ -208,11 +203,6 @@ static Key keys[] = {
         {MODKEY | ShiftMask, XK_Down, spawn, {.v = brightness_down}},             // brightness down (laptop)
         {0, XF86XK_MonBrightnessUp, spawn, {.v = brightness_up}},                 // brightness up
         {0, XF86XK_MonBrightnessDown, spawn, {.v = brightness_down}},             // brightness down
-        /* fn keys */
-        {0, XF86XK_AudioMicMute, spawn, {.v = audio_control_panel}},              // spawn audio control panel
-        {0, XF86XK_Tools, spawn, {.v = bluetooth_menu}},                          // spawn bluetoothctl in terminal
-        {0, XF86XK_Bluetooth, spawn, {.v = toggle_bluetooth}},                    // toggle bluetooth
-        {0, XF86XK_Favorites, spawn, {.v = connection_editor}},                   // spawn connection editor
 #endif
 };
 
